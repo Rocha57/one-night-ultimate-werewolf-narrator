@@ -33,7 +33,7 @@ function playTimeIsUpAudio() {
   if (timeIsUpPlayed) return;
   const lang = props.language || 'en';
   const folder = lang === 'en' ? 'en' : 'br';
-  const src = `/sounds/${folder}/common/male_everyone_timeisup_321vote.mp3`;
+  const src = `${import.meta.env.BASE_URL}sounds/${folder}/common/male_everyone_timeisup_321vote.mp3`;
   timeIsUpAudio = new Audio(src);
   timeIsUpAudio.play().catch(() => {});
   timeIsUpPlayed = true;

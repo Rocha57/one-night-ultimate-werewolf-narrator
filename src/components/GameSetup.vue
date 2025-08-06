@@ -113,8 +113,8 @@ function toggleSprite(role: string, idx: number) {
 }
 
 function getSpriteSrc(role: string) {
-  // Lowercase and use the same as in /public/sprites
-  return `/sprites/${role.toLowerCase()}.png`;
+  // Lowercase and use the same as in /public/sprites, with correct base path
+  return `${import.meta.env.BASE_URL}sprites/${role.toLowerCase()}.png`;
 }
 
 

@@ -106,76 +106,77 @@ const currentSprite = computed(() => {
     roleKey = labelToRolePt[label];
   }
   if (roleKey) {
-    return `/sprites/${roleKey}.png`;
+    return `${import.meta.env.BASE_URL}sprites/${roleKey}.png`;
   }
   return null;
 });
 
 function getAudioSequenceAndLabels(lang: 'en' | 'pt-br', roles: string[]) {
   const folder = lang === 'en' ? 'en' : 'br';
+  const base = import.meta.env.BASE_URL;
   const roleCounts: Record<string, number> = {};
   for (const role of roles) {
     roleCounts[role] = (roleCounts[role] || 0) + 1;
   }
   const sequence: string[] = [];
   const labels: string[] = [];
-  sequence.push(`/sounds/${folder}/common/male_everyone_close.mp3`);
+  sequence.push(`${base}sounds/${folder}/common/male_everyone_close.mp3`);
   labels.push(lang === 'en' ? 'Everyone Close Eyes' : 'Todos, fechem os olhos');
   if (roleCounts['Werewolf'] && roleCounts['Werewolf'] > 0) {
-    sequence.push(`/sounds/${folder}/werewolf/male_werewolf_wake.mp3`);
+    sequence.push(`${base}sounds/${folder}/werewolf/male_werewolf_wake.mp3`);
     labels.push(lang === 'en' ? 'Werewolf Wake Up' : 'Lobisomem, acorde');
-    sequence.push(`/sounds/${folder}/werewolf/male_werewolf_lonewolf_option.mp3`);
+    sequence.push(`${base}sounds/${folder}/werewolf/male_werewolf_lonewolf_option.mp3`);
     labels.push(lang === 'en' ? 'Lone Wolf Option' : 'Opção Lobo Solitário');
-    sequence.push(`/sounds/${folder}/werewolf/male_werewolf_close.mp3`);
+    sequence.push(`${base}sounds/${folder}/werewolf/male_werewolf_close.mp3`);
     labels.push(lang === 'en' ? 'Werewolf Close Eyes' : 'Lobisomem, feche os olhos');
   }
   if (roleCounts['Minion'] && roleCounts['Minion'] > 0) {
-    sequence.push(`/sounds/${folder}/minion/male_minion_wake.mp3`);
+    sequence.push(`${base}sounds/${folder}/minion/male_minion_wake.mp3`);
     labels.push(lang === 'en' ? 'Minion Wake Up' : 'Capanga, acorde');
-    sequence.push(`/sounds/${folder}/minion/male_minion_thumb.mp3`);
+    sequence.push(`${base}sounds/${folder}/minion/male_minion_thumb.mp3`);
     labels.push(lang === 'en' ? 'Minion Thumb' : 'Capanga, polegar');
-    sequence.push(`/sounds/${folder}/minion/male_minion_close.mp3`);
+    sequence.push(`${base}sounds/${folder}/minion/male_minion_close.mp3`);
     labels.push(lang === 'en' ? 'Minion Close Eyes' : 'Capanga, feche os olhos');
   }
   if (roleCounts['Mason'] && roleCounts['Mason'] > 0) {
-    sequence.push(`/sounds/${folder}/mason/male_mason_wake.mp3`);
+    sequence.push(`${base}sounds/${folder}/mason/male_mason_wake.mp3`);
     labels.push(lang === 'en' ? 'Mason Wake Up' : 'Maçon, acorde');
-    sequence.push(`/sounds/${folder}/mason/male_mason_close.mp3`);
+    sequence.push(`${base}sounds/${folder}/mason/male_mason_close.mp3`);
     labels.push(lang === 'en' ? 'Mason Close Eyes' : 'Maçon, feche os olhos');
   }
   if (roleCounts['Seer'] && roleCounts['Seer'] > 0) {
-    sequence.push(`/sounds/${folder}/seer/male_seer_wake.mp3`);
+    sequence.push(`${base}sounds/${folder}/seer/male_seer_wake.mp3`);
     labels.push(lang === 'en' ? 'Seer Wake Up' : 'Vidente, acorde');
-    sequence.push(`/sounds/${folder}/seer/male_seer_close.mp3`);
+    sequence.push(`${base}sounds/${folder}/seer/male_seer_close.mp3`);
     labels.push(lang === 'en' ? 'Seer Close Eyes' : 'Vidente, feche os olhos');
   }
   if (roleCounts['Robber'] && roleCounts['Robber'] > 0) {
-    sequence.push(`/sounds/${folder}/robber/male_robber_wake.mp3`);
+    sequence.push(`${base}sounds/${folder}/robber/male_robber_wake.mp3`);
     labels.push(lang === 'en' ? 'Robber Wake Up' : 'Ladrão, acorde');
-    sequence.push(`/sounds/${folder}/robber/male_robber_close.mp3`);
+    sequence.push(`${base}sounds/${folder}/robber/male_robber_close.mp3`);
     labels.push(lang === 'en' ? 'Robber Close Eyes' : 'Ladrão, feche os olhos');
   }
   if (roleCounts['Troublemaker'] && roleCounts['Troublemaker'] > 0) {
-    sequence.push(`/sounds/${folder}/troublemaker/male_troublemaker_wake.mp3`);
+    sequence.push(`${base}sounds/${folder}/troublemaker/male_troublemaker_wake.mp3`);
     labels.push(lang === 'en' ? 'Troublemaker Wake Up' : 'Encrenqueiro, acorde');
-    sequence.push(`/sounds/${folder}/troublemaker/male_troublemaker_close.mp3`);
+    sequence.push(`${base}sounds/${folder}/troublemaker/male_troublemaker_close.mp3`);
     labels.push(lang === 'en' ? 'Troublemaker Close Eyes' : 'Encrenqueiro, feche os olhos');
   }
   if (roleCounts['Drunk'] && roleCounts['Drunk'] > 0) {
-    sequence.push(`/sounds/${folder}/drunk/male_drunk_wake.mp3`);
+    sequence.push(`${base}sounds/${folder}/drunk/male_drunk_wake.mp3`);
     labels.push(lang === 'en' ? 'Drunk Wake Up' : 'Bêbado, acorde');
-    sequence.push(`/sounds/${folder}/drunk/male_drunk_close.mp3`);
+    sequence.push(`${base}sounds/${folder}/drunk/male_drunk_close.mp3`);
     labels.push(lang === 'en' ? 'Drunk Close Eyes' : 'Bêbado, feche os olhos');
   }
   if (roleCounts['Insomniac'] && roleCounts['Insomniac'] > 0) {
-    sequence.push(`/sounds/${folder}/insomniac/male_insomniac_wake.mp3`);
+    sequence.push(`${base}sounds/${folder}/insomniac/male_insomniac_wake.mp3`);
     labels.push(lang === 'en' ? 'Insomniac Wake Up' : 'Insone, acorde');
-    sequence.push(`/sounds/${folder}/insomniac/male_insomniac_close.mp3`);
+    sequence.push(`${base}sounds/${folder}/insomniac/male_insomniac_close.mp3`);
     labels.push(lang === 'en' ? 'Insomniac Close Eyes' : 'Insone, feche os olhos');
   }
-  sequence.push(`/sounds/${folder}/common/male_everyone_wiggle.mp3`);
+  sequence.push(`${base}sounds/${folder}/common/male_everyone_wiggle.mp3`);
   labels.push(lang === 'en' ? 'Everyone Wiggle' : 'Todos, mexam-se');
-  sequence.push(`/sounds/${folder}/common/male_everyone_wake.mp3`);
+  sequence.push(`${base}sounds/${folder}/common/male_everyone_wake.mp3`);
   labels.push(lang === 'en' ? 'Everyone Wake Up' : 'Todos, acordem');
   return { sequence, labels };
 }
