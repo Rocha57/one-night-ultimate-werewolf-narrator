@@ -204,8 +204,71 @@ function startGame() {
   object-fit: contain;
   user-select: none;
 }
-</style>
 
+@media (max-width: 700px) {
+  .role-sprite-grid {
+    gap: 0.7rem;
+    margin: 0.5rem 0 1rem 0;
+  }
+  .role-sprite-group {
+    min-width: 70px;
+  }
+  .role-sprite-label {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+  .role-sprite-select img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .role-sprite-grid {
+    gap: 0.3rem;
+    margin: 0.2rem 0 0.7rem 0;
+  }
+  .role-sprite-group {
+    min-width: 54px;
+  }
+  .role-sprite-label {
+    font-size: 0.85rem;
+    margin-bottom: 0.1rem;
+  }
+  .role-sprite-select img {
+    width: 28px;
+    height: 28px;
+  }
+}
+</style>
+.setup {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1.2rem 0.7rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px 0 rgba(60,60,60,0.09);
+}
+
+@media (max-width: 700px) {
+  .setup {
+    max-width: 100vw;
+    padding: 0.7rem 0.2rem;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .setup {
+    max-width: 100vw;
+    padding: 0.3rem 0.1rem;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+}
 <style scoped>
 .setup form > div {
   margin-bottom: 1.3rem;
@@ -261,5 +324,51 @@ button {
 button:hover {
   background: linear-gradient(90deg, #369870 60%, #00bcd4 100%);
   box-shadow: 0 4px 16px 0 rgba(60,60,60,0.12);
+}
+
+@media (max-width: 700px) {
+  .setup form > div {
+    margin-bottom: 0.7rem;
+  }
+  label {
+    font-size: 0.98rem;
+    margin-right: 0.3rem;
+  }
+  input[type="number"] {
+    width: 60px;
+    padding: 0.3rem 0.4rem;
+    font-size: 0.98rem;
+  }
+  select {
+    font-size: 0.98rem;
+    padding: 0.25rem 0.5rem;
+  }
+  button {
+    font-size: 1rem;
+    padding: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .setup form > div {
+    margin-bottom: 0.4rem;
+  }
+  label {
+    font-size: 0.92rem;
+    margin-right: 0.2rem;
+  }
+  input[type="number"] {
+    width: 44px;
+    padding: 0.18rem 0.3rem;
+    font-size: 0.92rem;
+  }
+  select {
+    font-size: 0.92rem;
+    padding: 0.15rem 0.3rem;
+  }
+  button {
+    font-size: 0.95rem;
+    padding: 0.5rem;
+  }
 }
 </style>

@@ -41,10 +41,11 @@ const sequenceStarted = ref(false);
 const currentAudioLabel = ref<string | null>(null);
 const audioQueue = ref<HTMLAudioElement[]>([]);
 let currentIdx = 0;
+let stopped = false;
 const countdown = ref(0);
 const paused = ref(false);
 let currentAudio: HTMLAudioElement | null = null;
-let stopped = false;
+
 
 // Map audio label to role key for sprite lookup
 const labelToRole: Record<string, string> = {

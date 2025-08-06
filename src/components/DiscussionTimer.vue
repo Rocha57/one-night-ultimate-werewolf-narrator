@@ -141,4 +141,32 @@ button {
 button:hover {
   background: #369870;
 }
+
+@media (max-width: 700px) {
+  .timer {
+    margin: 1rem 0;
+  }
+  .countdown {
+    font-size: 1.7rem;
+    margin: 0.7rem 0;
+  }
+  button {
+    font-size: 0.95rem;
+    padding: 0.4rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timer {
+    margin: 0.5rem 0;
+  }
+  .countdown {
+    font-size: 1.2rem;
+    margin: 0.3rem 0;
+  }
+  button {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
 </style>

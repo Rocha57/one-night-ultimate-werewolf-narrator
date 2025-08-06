@@ -89,46 +89,46 @@ watch(language, (val) => {
 </template>
 
 <style scoped>
-  .background {
-    min-height: 100vh;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    overflow: auto;
-  }
-  .bg-img {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: 0;
-    opacity: 0.7;
-    pointer-events: none;
-  }
-  .container {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: rgba(249,249,249,0.95);
-    border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-    color: #222;
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .logo-img {
-    width: 180px;
-    margin-bottom: 1.5rem;
-    margin-top: 0.5rem;
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.12));
-  }
+.background {
+  min-height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  overflow: auto;
+}
+.bg-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.7;
+  pointer-events: none;
+}
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(249,249,249,0.95);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  color: #222;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo-img {
+  width: 180px;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.12));
+}
 button {
   margin-top: 1rem;
   padding: 0.75rem 2rem;
@@ -141,5 +141,37 @@ button {
 }
 button:hover {
   background: #369870;
+}
+
+@media (max-width: 700px) {
+  .container {
+    max-width: 98vw;
+    margin: 0.5rem auto;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  .logo-img {
+    width: 120px;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 100vw;
+    padding: 0.5rem;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .logo-img {
+    width: 80px;
+    margin-bottom: 0.7rem;
+    margin-top: 0.3rem;
+  }
+  button {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
 }
 </style>
