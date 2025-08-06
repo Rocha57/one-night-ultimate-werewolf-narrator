@@ -1,0 +1,126 @@
+{
+	"m_AtlasName": "",
+	"m_Border": {
+		"m_W": 0,
+		"m_X": 0,
+		"m_Y": 0,
+		"m_Z": 0
+	},
+	"m_CorrespondingSourceObject": { "m_Collection": "resources.assets", "m_PathID": 0 },
+	"m_Extrude": 1,
+	"m_HideFlags": 0,
+	"m_IsPolygon": false,
+	"m_Name": "button_gear",
+	"m_Offset": {
+		"m_X": 0,
+		"m_Y": 0
+	},
+	"m_PackingTag": "",
+	"m_PixelsToUnits": 100,
+	"m_PrefabInternal": { "m_Collection": "resources.assets", "m_PathID": 0 },
+	"m_RD": {
+		"m_AlphaTexture": { "m_Collection": "resources.assets", "m_PathID": 0 },
+		"m_Indices": [
+			7,
+			6,
+			5,
+			4,
+			5,
+			6,
+			3,
+			5,
+			4,
+			0,
+			3,
+			4,
+			1,
+			3,
+			0,
+			2,
+			1,
+			0
+		],
+		"m_SettingsRaw": 64,
+		"m_Texture": { "m_Collection": "resources.assets", "m_PathID": 5 },
+		"m_TextureRect": {
+			"m_Height": 72,
+			"m_Width": 72,
+			"m_X": 0,
+			"m_Y": 0
+		},
+		"m_TextureRectOffset": {
+			"m_X": 0,
+			"m_Y": 0
+		},
+		"m_UvTransform": {
+			"m_W": 36,
+			"m_X": 100,
+			"m_Y": 36,
+			"m_Z": 100
+		},
+		"m_Vertices": [
+			{
+				"m_Pos": {
+					"m_X": 0.32,
+					"m_Y": 0.36,
+					"m_Z": 0
+				}
+			},
+			{
+				"m_Pos": {
+					"m_X": 0.36,
+					"m_Y": -0.2,
+					"m_Z": 0
+				}
+			},
+			{
+				"m_Pos": {
+					"m_X": 0.36,
+					"m_Y": 0.25,
+					"m_Z": 0
+				}
+			},
+			{
+				"m_Pos": {
+					"m_X": 0.18,
+					"m_Y": -0.36,
+					"m_Z": 0
+				}
+			},
+			{
+				"m_Pos": {
+					"m_X": -0.31,
+					"m_Y": 0.36,
+					"m_Z": 0
+				}
+			},
+			{
+				"m_Pos": {
+					"m_X": -0.31,
+					"m_Y": -0.36,
+					"m_Z": 0
+				}
+			},
+			{
+				"m_Pos": {
+					"m_X": -0.36,
+					"m_Y": 0.28,
+					"m_Z": 0
+				}
+			},
+			{
+				"m_Pos": {
+					"m_X": -0.36,
+					"m_Y": -0.2,
+					"m_Z": 0
+				}
+			}
+		]
+	},
+	"m_Rect": {
+		"m_Height": 72,
+		"m_Width": 72,
+		"m_X": 0,
+		"m_Y": 0
+	}
+}
