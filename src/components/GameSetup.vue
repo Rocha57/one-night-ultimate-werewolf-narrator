@@ -1,6 +1,5 @@
 <template>
   <div class="setup">
-    <h1>One Night Ultimate Werewolf</h1>
     <form @submit.prevent="startGame">
       <div>
         <label for="players">
@@ -93,11 +92,28 @@ const spriteRoleOptions = [
   { name: 'Tanner', max: 1 }
 ];
 
+
 // Selected sprites: { role: [bool, ...] } for each slot
 const selectedSprites = ref<Record<string, boolean[]>>({});
-for (const role of spriteRoleOptions) {
-  selectedSprites.value[role.name] = Array(role.max).fill(false);
+function setDefaultRoles(playerCount: number) {
+  // Clear all selections
+  for (const role of spriteRoleOptions) {
+    selectedSprites.value[role.name] = Array(role.max).fill(false);
+  }
+  // Example defaults for 4 players
+  if (playerCount === 4) {
+    selectedSprites.value['Werewolf'][0] = true;
+    selectedSprites.value['Werewolf'][1] = true;
+    selectedSprites.value['Seer'][0] = true;
+    selectedSprites.value['Robber'][0] = true;
+    selectedSprites.value['Troublemaker'][0] = true;
+    selectedSprites.value['Villager'][0] = true;
+    selectedSprites.value['Villager'][1] = true;
+    // 4 players + 3 = 7 roles selected
+  }
+  // Add more defaults for other player counts as needed
 }
+
 // If persisted config, restore selectedSprites
 if (initialRoles) {
   for (const role of spriteRoleOptions) {
@@ -106,7 +122,20 @@ if (initialRoles) {
       selectedSprites.value[role.name][i] = i < count;
     }
   }
+} else {
+  setDefaultRoles(initialPlayers);
 }
+
+// Watch for player count changes and set defaults if not restoring from config
+import { watch } from 'vue';
+let restoringConfig = !!initialRoles;
+watch(players, (val, oldVal) => {
+  if (!restoringConfig) {
+    setDefaultRoles(val);
+  }
+});
+// After first change, don't treat as restoring config
+watch(players, () => { restoringConfig = false; });
 
 function toggleSprite(role: string, idx: number) {
   selectedSprites.value[role][idx] = !selectedSprites.value[role][idx];
